@@ -33,4 +33,10 @@ public class PostController {
     public Post findWithWriteLockById(@PathVariable Long id) {
         return postService.findWithWriteLockById(id).orElse(null);
     }
+
+
+    @GetMapping("/modify/optimistic/{id}")
+    public Post modifyOptimistic(@PathVariable Long id) {
+        return postService.modifyOptimistic(id);
+    }
 }
