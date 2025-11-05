@@ -28,4 +28,7 @@ public class PostService {
         Thread.sleep(10000);
         return postRepository.findWithShareLockByid(id);
     }
+    public Optional<Post> findWithWriteLockById(Long id) {
+        return postRepository.findWithWriteLockById(id);
+    }
 }
